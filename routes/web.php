@@ -12,7 +12,9 @@
 */
 
 // main route
-Route::get('/'              , 'NoticiaController@list');
+Route::get('/', function() {
+	return view('default');
+});
 
 // news routes
 
