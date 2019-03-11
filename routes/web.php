@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/'            , 'NoticiaController@list');
+
+Route::get('/new'         , 'NoticiaController@new');
+
+Route::get('/delete/{id}' , 'NoticiaController@delete');
+
+Route::get('/edit/{id}'   , 'NoticiaController@edit');
+
+Route::post('/save'       , 'NoticiaController@save');
