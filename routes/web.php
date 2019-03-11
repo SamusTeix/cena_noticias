@@ -11,12 +11,23 @@
 |
 */
 
-Route::get('/'            , 'NoticiaController@list');
+// main route
+Route::get('/'              , 'NoticiaController@list');
 
-Route::get('/new'         , 'NoticiaController@new');
+// news routes
 
-Route::get('/delete/{id}' , 'NoticiaController@delete');
+Route::get('/noticias'              , 'NoticiaController@list');
+Route::get('/noticias/new'          , 'NoticiaController@new');
+Route::post('/noticias/save'        , 'NoticiaController@save');
+Route::get('/noticias/edit/{iId}'   , 'NoticiaController@edit');
+Route::post('/noticias/update'      , 'NoticiaController@update');
+Route::get('/noticias/delete/{iId}' , 'NoticiaController@delete');
 
-Route::get('/edit/{id}'   , 'NoticiaController@edit');
+// category router
 
-Route::post('/save'       , 'NoticiaController@save');
+Route::get('/categorias'              , 'CategoriaController@list');
+Route::get('/categorias/new'          , 'CategoriaController@new');
+Route::post('/categorias/save'        , 'CategoriaController@save');
+Route::get('/categorias/edit/{iId}'   , 'CategoriaController@edit');
+Route::post('/categorias/update'      , 'CategoriaController@update');
+Route::get('/categorias/delete/{iId}' , 'CategoriaController@delete');

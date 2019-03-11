@@ -10,31 +10,37 @@ use App\Categoria;
 class NoticiaController extends Controller {
 
 	public function list() {
-		$noticias = Noticia::all();
-		return view('list')->with('noticias', $noticias);
+		$aNoticias = Noticia::all();
+		return view('noticiaList')->with('aNoticias', $aNoticias);
 	}
 
-	public function edit($id) {
-		$noticia = Noticia::find($id);
-		$categorias = Categoria::all();
-		return view('edit')->with('n', $noticia)->with('categorias', $categorias);
+	public function edit($iId) {
+		$oNoticia    = Noticia::find($iId);
+		$aCategorias = Categoria::all();
+		return view('noticiaEdit')->with('oNoticia', $oNoticia)->with('aCategorias', $aCategorias);
 	}
 
 	public function new() {
-		$categorias = Categoria::all();
-		return view('edit')->with('categorias', $categorias);
+		$aCategorias = Categoria::all();
+		return view('noticiaNew')->with('aCategorias', $aCategorias);
 	}
 
 	public function save() {
 		Noticia::Create(Request::all());
-		return redirect('/')->withInput();
+		return redirect('noticias')->withInput();
 	}
 
-	public function delete($id) {
-		$noticia = Noticia::find($id);
-		$noticiaName = $noticia->name;
-		$noticia->delete();
-		return redirect('/')->with('msg', 'Noticia ' . $noticiaName . ' deletado com sucesso');
+	public function update() {
+		$aData = request()->except(['_token']);
+		Noticia::find($aData['id'])->update($aData);
+		return redirect('noticias')->withInput();
+	}
+
+	public function delete($iId) {
+		$oNoticia = Noticia::find($iId);
+		$sNoticiaName = $oNoticia->name;
+		$oNoticia->delete();
+		return redirect('noticias')->with('msg', 'Notícia ' . $sNoticiaName . ' deletada com sucesso');
 	}
 
 }

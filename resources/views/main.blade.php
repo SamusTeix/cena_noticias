@@ -6,7 +6,9 @@
 </head>
 <body>
 
-@yield('content')
+	<div style="margin: 5%;">
+		@yield('content')
+	</div>
 
 </body>
 </html>
