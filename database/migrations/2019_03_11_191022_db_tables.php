@@ -15,7 +15,7 @@ class DbTables extends Migration
     {
         Schema::create('noticias', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigIncrements('categoria_id');
+            $table->bigInteger('categoria_id');
             $table->string('titulo');
             $table->text('texto', 10000);
             $table->string('foto');

@@ -25,7 +25,7 @@ $ git clone https://github.com/SamusTeix/cena_noticias.git
 Instale os componentes:
 
 
-$ cd laravel-eventos
+$ cd cena_noticias
 
 $ composer install
 
@@ -38,13 +38,27 @@ $ chmod -R 775 bootstrap/cache
 $ chmod -R 775 storage
 
 
-* Ajuste as configurações do DB no arquivo .env
+Crie o Banco de Dados:
 
 
-Rode a criação do banco de dados:
+$ mysql -u ?USER?
+
+$ > create database cena_noticias;
+
+$ > exit
+
+
+Ou ajuste o arquivo .env para usar algum DB que já possua;
 
 
 $ php artisan migrate
+
+
+Crie o simbólico para a pasta de imagens:
+
+
+$ php artisan storage:link
+
 
 Inicialização local do projeto:
 
@@ -52,5 +66,6 @@ Inicialização local do projeto:
 $ php artisan key:generate
 
 $ php artisan serve
+
 
 Obs: após iniciado localmente, acesse http://127.0.0.1:8000/ apartir de qualquer navegador.
