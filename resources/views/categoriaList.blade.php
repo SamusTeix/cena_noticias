@@ -11,10 +11,10 @@
 			<tr>
 				<td>{{ $c->nome }}</td>
 				<!-- <td>
-					<a href="/categorias/edit/{{ $c->id }} ">Editar</a>
+					<a href="/categorias/edit/{{ $c->id }} "><i class="material-icons">create</i></a>
 				</td>
 				<td>
-					<a href="/categorias/delete/{{ $c->id }} ">Excluir</a>
+					<a href="/categorias/delete/{{ $c->id }} "><i class="material-icons">delete</i></a>
 				</td> -->
 			</tr>
 		@endforeach
