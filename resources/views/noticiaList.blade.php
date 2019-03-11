@@ -9,10 +9,10 @@
 	<table class="table">
 		@foreach ($aNoticias as $oItem) 
 			<tr>
-				<td>{{ $oItem->titulo          }}</td>
 				<td>{{ $oItem->categoria->nome }}</td>
+				<td>{{ $oItem->titulo          }}</td>
 				<td>{{ $oItem->texto           }}</td>
-				<td>{{ $oItem->foto            }}</td>
+				<td ><img src="{{ url("storage/{$oItem->foto}")}}" style="width: 10%"></td>
 				<td>
 					<a href="/noticias/edit/{{ $oItem->id }} ">Editar</a>
 				</td>

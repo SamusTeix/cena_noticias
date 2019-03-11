@@ -10,12 +10,12 @@
 		@foreach ($aCategorias as $c) 
 			<tr>
 				<td>{{ $c->nome }}</td>
-				<td>
+				<!-- <td>
 					<a href="/categorias/edit/{{ $c->id }} ">Editar</a>
 				</td>
 				<td>
 					<a href="/categorias/delete/{{ $c->id }} ">Excluir</a>
-				</td>
+				</td> -->
 			</tr>
 		@endforeach
 	</table>

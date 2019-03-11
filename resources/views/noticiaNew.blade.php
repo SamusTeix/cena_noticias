@@ -2,6 +2,16 @@
 
 @section('content')
 
+@if (!empty($sMsg))
+
+<div class="alert alert-danger">
+    <ul>
+      <li>$sMsg</li>
+    </ul>
+</div>
+
+@endif
+
 <h1>Nova Notícia</h1>
 
 <form action="save" method="post" enctype="multipart/form-data">

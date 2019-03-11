@@ -25,7 +25,8 @@
 		</div>
 	<div class="form-group">
 		<label>Foto:</label>
-		<input type="file" class="form-control" name="foto" value="{{ $oNoticia->foto }}">
+		<label><img src="{{ url("storage/{$oNoticia->foto}")}}" style="width: 30%;"></label>
+		<input type="file" class="form-control" name="foto">
 		</div>
 	<button type="submit" class="btn btn-primary">Salvar</button>
 </form>
